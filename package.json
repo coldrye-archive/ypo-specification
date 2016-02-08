@@ -1,0 +1,44 @@
+{
+  "name": "ypo-specification",
+  "version": "0.0.1",
+  "description": "YPO file format specification"
+  "keywords": [
+    "ypo",
+    "specification",
+    "t10n",
+    "i18n",
+    "i18next",
+    "translation",
+    "gettext",
+    "PO",
+    "translation",
+    "localization",
+    "internationalization"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "http://ypo.es.coldrye.eu/",
+  "bugs": {
+    "url": "https://github.com/coldrye-es/ypo-specification/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coldrye-es/ypo-specification.git"
+  },
+  "author": {
+    "name": "Carsten Klein",
+    "email": "trancesilken@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "cklein",
+      "email": "trancesilken@gmail.com"
+    }
+  ],
+  "files": [
+    "*",
+    "docs/*"
+  ],
+  "scripts": {
+    "prepublish": "test \"${MASTER}\" = \"1\" || (echo ${npm_config_argv} | grep -E '(install|update)' >/dev/null 2>/dev/null || (echo 'use *make publish* instead' && exit 1))"
+  }
+}
