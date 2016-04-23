@@ -7,7 +7,7 @@ context and without a pluralization option is considered the default variation.
 The default variation must immediately follow the translation id.
 
 Optionally, one can define a context for either of the available variations.
-Again, optionally, one can define a pluralization option for either of the
+Again, optionally, one can define a pluralization directive for either of the
 available variations.
 
 Apart from that, a variation consists of one or multiple lines of text, which
@@ -30,17 +30,23 @@ a boy
 a girl
 
 # plural variation for a single child
-#= plural 1
+#+ 1
 one child
 
 # plural variation for two children
-#= plural 2
+#+ 2
 two children
 
-# infinite/indefinite plural variation
-#= plural
+# ranged plural
+#+ 3..100
 some children
+
+# indefinite plural
+#+ [inf]
+a lot of children
 ```
+
+TODO:refactor to pluralization
 
 The above example translates to the i18next format like this
 
@@ -51,7 +57,9 @@ The above example translates to the i18next format like this
   "child_female": "a girl",
   "child_1": "one child",
   "child_2": "two children",
-  "child_plural": "some children"
+  "child_3": "some children",
+  "child_101": "a lot of children",
+  "child_plural": "a lot of children"
 }
 ```
 
@@ -80,10 +88,10 @@ strings without any whitespace or similar such separators/delimiters.
 
 #### Variation Options
 
-##### TBD:Plural Option
+##### TBD:Plural Directive
 
 ```
-#= plural [<cardinality>]
+#+ [<cardinality>]
 ```
 
 

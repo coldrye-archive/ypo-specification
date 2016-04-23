@@ -74,10 +74,11 @@ it is a mandatory requirement.
 The namespace option corresponds directly to the i18next translation file name.
 While mostly the namespace option can be considered redundant, it is required for
 processes where the originating file name ``*.ypo`` does not match the target
-i18next JSON file name.
+i18next JSON file name and thus is a mandatory requirement.
 
 Namespace ids must be simple identifiers and are limited to alpha numeric ASCII
-strings without any whitespace or similar such separators/delimiters.
+strings including ``$``, ``.``, ``_`` and ``-``. Namespace ids must not contain
+any whitespace.
 
 The default namespace is ``translation`` and it can be overridden.
 
@@ -89,7 +90,8 @@ The default namespace is ``translation`` and it can be overridden.
 
 ```
 #= ns translation
-#= ns configui
+#= ns config-ui
+#= ns ui.config.general
 ``` 
 
 

@@ -4,18 +4,29 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. Concepts
-  1. [Translation Unit](./unit.md)
-  2. [Translation](./translation.md)
-  3. [Variation](./variation.md)
-  4. [Text](./text.md)
+2. [Tokens](./token.md)
+  1. [Text](./text.md)
+    1. [EmptyLine](./emptyline.md)
+    2. [Line](./line.md)
+    2. [CompoundText](./compoundtext.md)
+  2. [Directives](./directive.md)
+    1. [Authorship](./authorship.md)
+    2. [Context](./context.md)
+    3. [Comment](./comment.md)
+    4. [Option](./option.md)
+    5. [Plural](./plural.md)
+    6. [TranslationId](./translationid.md)
+  3. [Symbols](./symbol.md)
+    1. [Translation Unit](./unit.md)
+    2. [Translation](./translation.md)
+    3. [Variation](./variation.md)
 3. Addendum
-  1. [Addendum - Production Rules](./addendum-rules.md)
+  1. [Production Rules](./addendum-rules.md)
 
 
 ## Introduction
 
-The YPO file format is indented to be used as an alternative for authoring
+The YPO file format is indended to be used as an alternative for authoring
 i18next translation units using a plain text file format instead of JSON.
 
 
@@ -33,7 +44,7 @@ The standard file extension is `.ypo`.
 ### Encoding
 
 The default encoding is UTF-8. The number of supported encordings is currently
-being limited by ``node`` platform, yet, and as the available tooling evolves,
+being limited by the ``node`` platform. As the available tooling evolves,
 additional encodings will become available.
 
 
@@ -44,16 +55,17 @@ All available line separators, e.g. '\n', '\r', and '\r\n' are supported.
 
 ### Motivation
 
-Simply put, authoring i18next JSON files using VI is very tedious.
+Simply put, authoring i18next JSON files using VI other plain text oriented
+editors is very tedious.
 Likewise so is authoring gettext PO files. And while the latter is much
 more streamlined than i18next JSON, it is still rather cumbersome when
-authoring plurals a/o contexts in combination with i18next.
+authoring plurals.
 
 
 ### Limitations and Otherwise Unsupported Features
 
 
-#### i18nextv2: Arrays and Trees
+#### i18next/2: Arrays and Trees
 
 We are unable to find any use case for any of the two, and what cannot be
 expressed by using standard translation ids a/o variations thereof.
@@ -66,7 +78,7 @@ TODO:example for replacing arrays using standard keys and variations thereof
 TODO:example for replacing trees using standard keys and variations thereof
 
 
-#### i18nextv2: Interval Plurals
+#### i18next2: Interval Plurals
 
 While this is definitely a feature to go for, the current i18next specification
 makes it rather difficult to maintain interval variations, given that all
@@ -77,7 +89,7 @@ For the time being, just use carefully designed plural variations.
 TODO:example for replacing interval plurals using standard plurals
 
 
-#### i18nextv2: Fallback Keys
+#### i18next2: Fallback Keys
 
 Having text as the translation id is rather cumbersome and might never be supported.
 While having used gettext in both django/python and c/c++ based projects, we believe

@@ -2,7 +2,7 @@
 
 This is the repository for the YPO file format specification.
 
-See the [specification](https://github.com/coldrye-es/ypo-specification/blob/master/docs/index.md) for more information on the file format.
+See the [specification](docs/index.md) for more information on the file format.
 
 
 ## Releases
@@ -51,7 +51,7 @@ See the [contributing guidelines](https://github.com/coldrye-es/ypo-specificatio
 
 ### Contributors
 
- - [Carsten Klein](https://github.com/silkentrance) **Maintainer**
+See [contributors](https://github.com/coldrye-es/ypo-specification/graphs/contributors) for more information.
 
 
 ## Resources

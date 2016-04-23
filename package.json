@@ -1,6 +1,6 @@
 {
   "name": "ypo-specification",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "YPO file format specification"
   "keywords": [
     "ypo",
@@ -40,5 +40,8 @@
   ],
   "scripts": {
     "prepublish": "test \"${MASTER}\" = \"1\" || (echo ${npm_config_argv} | grep -E '(install|update)' >/dev/null 2>/dev/null || (echo 'use *make publish* instead' && exit 1))"
+  },
+  "globalDevDependencies": {
+    "conventional-changelog": ">=1.0.1"
   }
 }
